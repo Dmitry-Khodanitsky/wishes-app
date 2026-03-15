@@ -14,6 +14,6 @@
     "src/**/*",
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
-    "nativewind-env.d.ts"
-, "test.cjs"  ]
+    "test.cjs"
+  ]
 }
