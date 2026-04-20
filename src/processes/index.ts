@@ -1,0 +1,1 @@
+export { useAuthStore } from '@/src/processes/auth/model/auth.store'
