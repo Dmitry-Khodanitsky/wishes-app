@@ -1,10 +1,14 @@
-export type TWideButtonProps = {
+import { ReactElement } from "react"
+
+export interface IWideButtonProps {
   onPress: () => void
   label: string
   bgColor?: string
   color?: string
-  disabled?: boolean
+  isDisabled?: boolean
+  variant?: 'outlined' | 'filled'
+  icon?: ReactElement | null
 }
 
-export type RootProps = Omit<TWideButtonProps, 'onPress' | 'label'>
-export type ButtonLabelProps = Pick<TWideButtonProps, 'color'>
+export type TRootProps = Omit<IWideButtonProps, 'onPress' | 'label'>
+export type TButtonLabelProps = Pick<IWideButtonProps, 'color'>
