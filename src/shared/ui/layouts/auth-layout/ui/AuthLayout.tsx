@@ -1,6 +1,6 @@
+import type { PropsWithChildren, ReactElement } from 'react'
 import * as S from './AuthLayout.styles'
-import { PropsWithChildren } from 'react'
 
-export const AuthLayout = ({ children }: PropsWithChildren) => (
-  <S.Root>{children}</S.Root>
-)
+export function AuthLayout({ children }: PropsWithChildren): ReactElement {
+  return <S.Root>{children}</S.Root>
+}
