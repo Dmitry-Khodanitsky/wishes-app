@@ -1,15 +1,18 @@
 export const COLORS = {
-  black: '#0A0A0A',
-  red: '#E4534C',
-  orange: '#FFB488',
-  beige: '#FEEED6',
-  white: '#FBFBFB',
-  darkGrey: '#1A1A1A',
-  grey: '#6A7282',
-  blue: '#364153',
-  darkBlue: '#1E2939',
-  indigo: '#101828',
-}
+  black: '#0C0C0C',
+  yellow: '#FFD166',
+  orange: '#FF8555',
+  red: '#F05A55',
+  deepRed: '#B23B3B',
+  beige: '#FFEAD5',
+  white: '#FFFFFF',
+  darkGrey: '#222222',
+  grey: '#7A879A',
+  blue: '#3E526B',
+  darkBlue: '#1F3145',
+  indigo: '#192A3A',
+} as const
+
 const darkTheme = {
   bg: COLORS.black,
   accent: {
@@ -22,6 +25,8 @@ const darkTheme = {
     secondary: COLORS.black,
     tertiary: COLORS.orange,
     quanternary: COLORS.grey,
+    yellow: COLORS.yellow,
+    red: COLORS.red,
   },
   inputField: COLORS.darkGrey,
   sceleton: {
@@ -29,31 +34,13 @@ const darkTheme = {
     secondary: COLORS.darkBlue,
     tertiary: COLORS.indigo,
   },
-}
-
-// Белая тема пока не придумана, это просто заглушка
-const whiteTheme = {
-  bg: COLORS.black,
-  accent: {
-    primary: COLORS.orange,
-    secondary: COLORS.beige,
-    tertiary: COLORS.red,
-  },
-  text: {
-    primary: COLORS.white,
-    secondary: COLORS.black,
-    tertiary: COLORS.orange,
-    quanternary: COLORS.grey,
-  },
-  inputField: COLORS.darkGrey,
-  sceleton: {
-    primary: COLORS.blue,
-    secondary: COLORS.darkBlue,
-    tertiary: COLORS.indigo,
-  },
-}
-
+} as const
 export const colorPallete = {
-  whiteTheme,
   darkTheme,
-}
+} as const
+
+export const buttonGradients = {
+  primary: [COLORS.orange, COLORS.red],
+  secondary: [COLORS.yellow, COLORS.orange],
+  tertiary: [COLORS.red, COLORS.deepRed],
+} as const
