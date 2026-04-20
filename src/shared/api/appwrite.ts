@@ -7,7 +7,7 @@ const config = {
   bundleId: 'com.dim.wishes.app',
 }
 
-const client = new Client()
+export const client = new Client()
 
 client
   .setEndpoint(config.endpoint)
