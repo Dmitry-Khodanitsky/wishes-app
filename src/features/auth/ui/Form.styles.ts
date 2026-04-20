@@ -2,11 +2,13 @@ import styled from '@emotion/native'
 import { colorPallete } from '@/src/shared/constants/themeColors'
 
 export const Root = styled.View({
-  display: 'flex',
-  gap: 28,
+  width: '100%',
+  gap: 40,
+  paddingVertical: 4,
 })
 export const InputContainer = styled.View({
-  gap: 12,
+  gap: 15,
+  height: 100,
 })
 
 export const InputTitle = styled.Text({
@@ -20,7 +22,6 @@ export const BottomContainer = styled.View({
 })
 
 export const FormFooter = styled.View({
-  display: 'flex',
   flexDirection: 'row',
   justifyContent: 'center',
   alignItems: 'center',
@@ -35,4 +36,9 @@ export const FooterLink = styled.Text({
   color: colorPallete.darkTheme.text.primary,
   fontSize: 18,
   fontWeight: 'bold',
+})
+
+export const ErrorMessage = styled.Text({
+  color: colorPallete.darkTheme.text.red,
+  fontSize: 16,
 })
