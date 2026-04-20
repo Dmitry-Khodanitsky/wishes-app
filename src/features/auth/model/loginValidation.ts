@@ -7,7 +7,7 @@ export const getLoginSchema = () =>
   Yup.object({
     email: Yup.string()
       .email('Некорректный email')
-      .required('Email обязателен'),
+      .required('email обязателен'),
 
     password: Yup.string()
       .required('Пароль обязателен')
