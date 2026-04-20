@@ -10,11 +10,16 @@ export const InputField = ({
   placeholder,
   formik,
   secureTextEntry = false,
+  onChangeText,
 }: InputFieldProps) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false)
 
   const hasEyeIcon = secureTextEntry
   const hasErrors = formik.touched[fieldName] && formik.errors[fieldName]
+  const handleChangeText = (text: string) => {
+    onChangeText?.()
+    formik.setFieldValue(fieldName, text)
+  }
 
   return (
     <S.Root hasErrors={!!hasErrors}>
@@ -31,7 +36,7 @@ export const InputField = ({
             ? colorPallete.darkTheme.accent.tertiary
             : colorPallete.darkTheme.text.quanternary
         }
-        onChangeText={formik.handleChange(fieldName)}
+        onChangeText={handleChangeText}
         onBlur={() => formik.handleBlur(fieldName)}
         value={formik.values[fieldName]}
         secureTextEntry={secureTextEntry && !isPasswordVisible}
