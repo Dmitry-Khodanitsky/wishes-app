@@ -1,10 +1,16 @@
 import { colorPallete } from '@/src/shared'
 import styled from '@emotion/native'
 
-export const Actions = styled.View({
-  width: '100%',
+export const Root = styled.View({
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: 100,
+})
+
+export const Content = styled.View({
+  paddingVertical: 48,
   gap: 20,
-  marginTop: 'auto',
+
 })
 
 export const FooterText = styled.Text({

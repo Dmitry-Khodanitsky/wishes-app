@@ -1,4 +1,10 @@
-import { AuthLayout, WideButton, AuthTitle } from '@/src/shared/ui'
+import {
+  AuthLayout,
+  WideButton,
+  AuthTitle,
+  GoogleIcon,
+  AppleIcon,
+} from '@/src/shared/ui'
 import { Link } from 'expo-router'
 import * as S from './WelcomePage.styles'
 import { Header } from '@/src/widgets'
@@ -18,40 +24,45 @@ export function WelcomePage() {
         contentFit="cover"
         transition={1000}
       /> */}
-      <Header />
-      <AuthTitle>Делись своими желаниями с друзьями</AuthTitle>
 
-      {/* Нижняя часть (Кнопки) */}
-      <S.Actions>
-        <Link href="/login" asChild>
-          <WideButton
-            onPress={() => console.log('Продолжить с Apple')}
-            label="Продолжить с Apple"
-          />
-        </Link>
-        <Link href="/login" asChild>
-          <WideButton
-            onPress={() => console.log('Продолжить с Google')}
-            label="Продолжить с Google"
-          />
-        </Link>
-        <Link href="/login" asChild>
-          <WideButton
-            onPress={() => console.log('Электронная почта')}
-            label="Электронная почта"
-          />
-        </Link>
-        {/* <Link href="/signup" asChild>
+      <Header />
+      <S.Root>
+        <AuthTitle>Делись своими желаниями с друзьями</AuthTitle>
+
+        {/* Нижняя часть (Кнопки) */}
+        <S.Content>
+          <Link href="/login" asChild>
+            <WideButton
+              onPress={() => console.log('Продолжить с Apple')}
+              label="Продолжить с Apple"
+              icon={<AppleIcon />}
+            />
+          </Link>
+          <Link href="/login" asChild>
+            <WideButton
+              onPress={() => console.log('Продолжить с Google')}
+              label="Продолжить с Google"
+              icon={<GoogleIcon />}
+            />
+          </Link>
+          <Link href="/login" asChild>
+            <WideButton
+              onPress={() => console.log('Электронная почта')}
+              label="Электронная почта"
+            />
+          </Link>
+          {/* <Link href="/signup" asChild>
           <WideButton
             onPress={() => console.log('зарегаться')}
             label="Регистрация"
           />
         </Link> */}
-        <S.FooterText>
-          Продолжая, вы соглашаетесь с условиями предоставления услуг и
-          политикой конфиденциальности Wishly
-        </S.FooterText>
-      </S.Actions>
+          <S.FooterText>
+            Продолжая, вы соглашаетесь с условиями предоставления услуг и
+            политикой конфиденциальности Wishly
+          </S.FooterText>
+        </S.Content>
+      </S.Root>
     </AuthLayout>
   )
 }
